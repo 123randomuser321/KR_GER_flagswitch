@@ -1,0 +1,16 @@
+﻿### loc for 'German Flagswitch for Kaiserreich'
+### By MEEEB
+### v1
+l_english:
+
+# Civil flag
+gerflag.1.t:0 "Germany at peace"
+gerflag.1.d:0 "The war is over. The German people may finally rest."
+gerflag.1.a:0 "Hoist the Imperial tricolour!"
+# End Civil flag
+
+# War flag
+gerflag.2.t:0 "Germany at war!"
+gerflag.2.d:0 "We are at war! May the spirit of the German people crush our enemies!"
+gerflag.2.a:0 "To arms! Hoist the Reichskriegsflagge!"
+# End War flag

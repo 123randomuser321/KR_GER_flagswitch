@@ -1,0 +1,72 @@
+﻿### The two events for 'German Flagswitch for Kaiserreich'
+### By MEEEB
+### v1 rev1 - fixed gerflag.2 loop
+
+### Create a namespace for this
+
+add_namespace = gerflag
+
+### done
+
+
+### Start of the event for the civil flag
+
+country_event = {
+	id = gerflag.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gerflag.1"}
+	title = gerflag.1.t
+	desc = gerflag.1.d
+
+	trigger = {
+	tag = GER
+	has_country_flag = GER_war_flag # War flag must be set --> doesn't trigger at game-start
+	NOT = {
+	has_war = yes # looks wonky but works
+	}
+	}
+
+	mean_time_to_happen = {
+	days = 10
+	}
+
+	option = {
+	name = gerflag.1.a
+	clr_country_flag = GER_war_flag
+	set_country_flag = GER_civil_flag
+	set_cosmetic_tag = GER_at_peace
+	}
+}
+
+### End of the event for the civil flag
+
+
+### Start of the event for the war flag
+
+country_event = {
+	id = gerflag.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gerflag.2"}
+	title = gerflag.2.t
+	desc = gerflag.2.d
+
+	trigger = {
+	tag = GER
+	#has_country_flag = GER_civil_flag # Commented out so we don't need a third event
+	NOT = {
+	has_country_flag = GER_war_flag
+	}
+	has_war = yes
+	}
+
+	mean_time_to_happen = {
+	days = 10
+	}
+
+	option = {
+	name = gerflag.2.a
+	clr_country_flag = GER_civil_flag # dirty but works
+	set_country_flag = GER_war_flag
+	set_cosmetic_tag = GER_at_war
+	}
+}
+
+### End of the event for the war flag

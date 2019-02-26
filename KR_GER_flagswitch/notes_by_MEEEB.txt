@@ -1,0 +1,63 @@
+If this is all on one line, blame Windows.
+### notes
+### By MEEEB
+### v1 rev2 - Formatting issues + removed a lie
+
+Hello reader!
+
+This document is just a quick rundown on sources plus some general notes.
+
+
+Sources:
+
+German tricolour: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flag_of_the_German_Empire.svg/1200px-Flag_of_the_German_Empire.svg.png
+Reichskriegsflagge: https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/War_Ensign_of_Germany_%281903-1918%29.svg/1280px-War_Ensign_of_Germany_%281903-1918%29.svg.png
+
+
+General notes:
+
+As of now, this mod does three things:
+
+1. It overwrites the standard German flag in Kaiserreich with the tricolour.
+2. It creates two cosmetic tags (the flags) to use.
+3. It uses two events to switch between the flags, depending on your diplomatic state (i.e. at war --> War flag; at peace --> Civil flag).
+
+
+Files overridden:
+
+[Kaiserreich]/gfx/flags/GER.tga
+[Kaiserreich]/gfx/flags/medium/GER.tga
+[Kaiserreich]/gfx/flags/small/GER.tga
+
+
+Files added:
+
+/events/KR_GER_flagswitch.txt
+/gfx/flags/GER_at_peace.tga
+/gfx/flags/GER_at_war.tga
+/gfx/flags/medium/GER_at_peace.tga
+/gfx/flags/medium/GER_at_war.tga
+/gfx/flags/small/GER_at_peace.tga
+/gfx/flags/small/GER_at_war.tga
+/localisation/KR_GER_flagswitch_l_english.yml
+/notes_by_MEEEB.txt (this file)
+
+
+Dev notes:
+
+This mod took me way too long to make.
+
+(small flag sizes 11x7 only works in KR, 10x7 is still the vanilla dimension)
+
+
+I did this, because I am bothered with seeing the Reichskriegsflagge (english: Imperial War Flag) during peacetime.
+While simple replacers already exist, I couldn't find a mod that actually switches the flags depending on your diplomatic state.
+So I did this. If anyone already did that: sorry, didn't find your mod.
+
+I might rework the events at some point, but as of now, everything should work.
+
+As of now, this mod has cosmetic tags for Germany in general, disregarding ideologies.
+Although that shouldn't be a problem (since you are not supposed to puppet GER, with the exception of RUS, but they usually do not have non-logical ideologies regarding the German Empire), bear in mind, that this mod will, in such cases, give GER non-logical flags.
+
+
+ - MEEEB
