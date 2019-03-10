@@ -1,7 +1,8 @@
 If this is all on one line, blame Windows.
 ### notes
 ### By MEEEB
-### v1 rev2 - Formatting issues + removed a lie
+### v2
+### My grammar was lacking
 
 Hello reader!
 
@@ -23,7 +24,7 @@ As of now, this mod does three things:
 3. It uses two events to switch between the flags, depending on your diplomatic state (i.e. at war --> War flag; at peace --> Civil flag).
 
 
-Files overridden:
+Files overwritten:
 
 [Kaiserreich]/gfx/flags/GER.tga
 [Kaiserreich]/gfx/flags/medium/GER.tga
