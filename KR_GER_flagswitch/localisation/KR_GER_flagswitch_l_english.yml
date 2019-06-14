@@ -1,25 +1,31 @@
 ﻿### loc for 'German Flagswitch for Kaiserreich'
 ### By MEEEB
-### v2
-### loc for custom_effect_tooltip and optionals
+### v3
+### adapted to redesign
 
 
 l_english:
 
-# Civil flag
+### Civil flag
 gerflag.1.t:0 "Germany at peace"
 gerflag.1.d:0 "The war is over. The German people may finally rest."
 gerflag.1.a:0 "Hoist the Imperial tricolour!"
 gerflag.1.b:0 "We have no time for peace!"
 gerflag.1.ta:0 "The German Empire will use the Imperial tricolour."
 gerflag.1.tb:0 "The German Empire will continue to use the Imperial War flag."
-# End Civil flag
+### End Civil flag
 
-# War flag
+### War flag
 gerflag.2.t:0 "Germany at war!"
 gerflag.2.d:0 "We are at war! May the spirit of the German people crush our enemies!"
 gerflag.2.a:0 "To arms! Hoist the Reichskriegsflagge!"
 gerflag.2.b:0 "We will be home in no time!"
 gerflag.2.ta:0 "The German Empire will use the Imperial War flag."
 gerflag.2.tb:0 "The German Empire will cotinue to use the Imperial tricolour."
-# End War flag
+### End War flag
+
+### reset
+gerflag.3.t:0 "Return to peace"
+gerflag.3.d:0 "As expected, our enemies were unable to bother us to any extent.\n\nAnd thus, peace has returned."
+gerflag.3.a:0 "An easy exercise."
+### reset end

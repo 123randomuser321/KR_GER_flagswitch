@@ -1,8 +1,7 @@
 ﻿### The two events for 'German Flagswitch for Kaiserreich'
 ### By MEEEB
-### v2
-### Added custom tooltips
-### moved event options into hidden_effect
+### v3
+### redesign based on my skeleton flagswitch
 
 ### Create a namespace for this
 
@@ -11,74 +10,65 @@ add_namespace = gerflag
 ### done
 
 
-### Start of the event for the civil flag
+### event for the civil flag
 
 country_event = {
 	id = gerflag.1
-	immediate = {log = "[GetDateText]: [Root.GetName]: event gerflag.1"}
 	title = gerflag.1.t
 	desc = gerflag.1.d
 
 	trigger = {
 	tag = GER
 	has_country_flag = GER_war_flag # War flag must be set --> doesn't trigger at game-start
-	NOT = {
-	has_war = yes # looks wonky but works
-	}
+	NOT = { has_war = yes }
 	}
 
-	mean_time_to_happen = {
-	days = 10
+	immediate = {
+	clr_country_flag = GER_war_flag
+	clr_country_flag = GER_war_flag_occured
 	}
+
+	mean_time_to_happen = { days = 0 }
 
 	option = {
 	name = gerflag.1.a
 	hidden_effect = {
-	clr_country_flag = GER_war_flag
-	set_country_flag = GER_civil_flag
-	set_cosmetic_tag = GER_at_peace
+	set_cosmetic_tag = GER
 	}
 	custom_effect_tooltip = gerflag.1.ta
 	}
 
 	option = {
 	name = gerflag.1.b
-	hidden_effect = {
-	clr_country_flag = GER_war_flag
-	set_country_flag = GER_civil_flag
-	}
 	custom_effect_tooltip = gerflag.1.tb
 	}
 }
 
-### End of the event for the civil flag
+### End event for the civil flag
 
 
-### Start of the event for the war flag
+### event for the war flag
 
 country_event = {
 	id = gerflag.2
-	immediate = {log = "[GetDateText]: [Root.GetName]: event gerflag.2"}
 	title = gerflag.2.t
 	desc = gerflag.2.d
 
 	trigger = {
 	tag = GER
-	#has_country_flag = GER_civil_flag # Commented out so we don't need a third event
-	NOT = {
-	has_country_flag = GER_war_flag
-	}
+	NOT = { has_country_flag = GER_war_flag_occured }
 	has_war = yes
 	}
 
-	mean_time_to_happen = {
-	days = 10
+	immediate = {
+	set_country_flag = GER_war_flag_occured
 	}
+
+	mean_time_to_happen = { days = 0 }
 
 	option = {
 	name = gerflag.2.a
 	hidden_effect = {
-	clr_country_flag = GER_civil_flag # dirty but works
 	set_country_flag = GER_war_flag
 	set_cosmetic_tag = GER_at_war
 	}
@@ -87,12 +77,37 @@ country_event = {
 
 	option = {
 	name = gerflag.2.b
-	hidden_effect = {
-	clr_country_flag = GER_civil_flag
-	set_country_flag = GER_war_flag
-	}
 	custom_effect_tooltip = gerflag.2.tb
 	}
 }
 
-### End of the event for the war flag
+### End event for the war flag
+
+### reset event incase gerflag.2.b was chosen
+
+country_event = {
+	id = gerflag.3
+	title = gerflag.3.t
+	desc = gerflag.3.d
+
+	trigger = {
+	tag = GER
+	NOT = {
+	has_country_flag = GER_war_flag # only set by .2.a
+	has_war = yes
+	}
+	has_country_flag = GER_war_flag_occured # set by .2's 'immediate'
+	}
+
+	immediate = {
+	clr_country_flag = GER_war_flag_occured # the actual reset; this way, .1 will not occur, but .2 can occur during the next war
+	}
+
+	mean_time_to_happen = { days = 0 }
+
+	option = {
+	name = gerflag.3.a # just fluff
+	}
+}
+
+### end reset
